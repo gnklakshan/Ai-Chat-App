@@ -18,7 +18,7 @@ if(process.env.NODE_ENV === 'development'){
     app.use(moragan('dev')); //log http requests in console
 }
 
-//define routes
+//define routes  //domain/api/v1 then transfer to appRouter to handle
 app.use("api/v1",appRouter); //all routes start with /api/v1
 
 
