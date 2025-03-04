@@ -11,7 +11,7 @@ app.use(express.json()); //parse json data from request body
 if (process.env.NODE_ENV === 'development') {
     app.use(moragan('dev')); //log http requests in console
 }
-//define routes
-app.use("api/v1", appRouter); //all routes start with /api/v1
+//define routes  //domain/api/v1 then transfer to appRouter to handle
+app.use("/api/v1", appRouter); //all routes start with /api/v1
 export default app;
 //# sourceMappingURL=app.js.map
