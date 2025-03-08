@@ -23,3 +23,23 @@ text-decoration: none;
 letter-spacing: 1px;
 
 }
+
+.MuiOutlinedInput-input {
+  border-color: "white";
+
+}
+
+/* CustomInput.css */
+.custom-textfield {
+  width: 400px;
+}
+
+ .MuiOutlinedInput-root {
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+}
+.MuiOutlinedInput-input-root.Mui-focused ,
+.MuiOutlinedInput-notchedOutline {
+  border-color: white !important; /* Default border color */
+}
