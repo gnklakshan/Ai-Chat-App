@@ -28,7 +28,7 @@ export const userSignUp = async (req, res, next) => {
         const token = createToken(User._id.toString, User.email, "7d"); //create token
         //domain should need to change in production***********************************
         res.cookie(COOKIE_NAME, token, { path: "/", domain: "localhost", expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), httpOnly: true }); //set token in cookie , have to add cookie-parser middleware in app.ts before using this
-        return res.status(201).json({ message: "ok", id: User._id.toString() }); //return all users in json format
+        return res.status(201).json({ message: "ok", name: User.name, email: User.email }); //return all users in json format
     }
     catch (error) {
         console.log(error);
@@ -52,7 +52,7 @@ export const userLogin = async (req, res, next) => {
         const token = createToken(User._id.toString, User.email, "7d"); //create token
         //domain should need to change in production***********************************
         res.cookie(COOKIE_NAME, token, { path: "/", domain: "localhost", expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), httpOnly: true }); //set token in cookie , have to add cookie-parser middleware in app.ts before using this
-        return res.status(200).json({ message: "ok", id: User._id.toString() }); //return all users in json format
+        return res.status(200).json({ message: "ok", name: User.name, email: User.email }); //return all users in json format
     }
     catch (error) {
         console.log(error);
