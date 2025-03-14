@@ -4,9 +4,11 @@ import { config } from 'dotenv';
 import moragan from 'morgan';
 import appRouter from './routes/index.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 config(); //load environment variables from .env file
 const app = express(); //create express app
 // Middleware
+app.use(cors({ origin: "http://localhost:5174", credentials: true })); //allow requests from client url
 app.use(express.json()); //parse json data from request body
 app.use(cookieParser(process.env.COOKIE_SECRET)); //parse cookies from request
 //no need for this middleware in production , only for development

@@ -6,6 +6,7 @@ export const loginUser = async (email: string, password: string) => {
     email,
     password,
   });
+  console.log(response);
   if (response.status !== 200) {
     throw new Error("Failed to login");
   }
