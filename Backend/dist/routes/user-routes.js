@@ -6,5 +6,6 @@ userRouter.get("/", getAllUsers);
 //first call validate function if it satisfy then call userSignUp
 userRouter.post("/signup", validatefun(signupValidator), userSignUp);
 userRouter.post("/login", validatefun(loginValidator), userLogin); //validatefun will validate the request body before calling userSignUp
+userRouter.get("/auth-status", userLogin);
 export default userRouter;
 //# sourceMappingURL=user-routes.js.map

@@ -12,3 +12,14 @@ export const loginUser = async (email: string, password: string) => {
   }
   return response.data;
 };
+
+// Login an existing user by checking the auth status with available cookies
+export const checkAuthStatus = async () => {
+  const response = await axios.get("/user/auth-status");
+  console.log(response);
+  if (response.status !== 200) {
+    throw new Error("Unable to authenticate");
+  }
+  const data = await response.data;
+  return data;
+};

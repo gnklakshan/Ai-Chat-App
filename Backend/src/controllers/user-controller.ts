@@ -17,7 +17,7 @@ export const getAllUsers = async (req:Request, res: Response , next:NextFunction
 
 export const userSignUp = async (req:Request, res: Response , next:NextFunction)=>{
     //user sign up
-    try {
+    try { 
         const {name,email,password}= req.body; //get data from request body
         const UserExist = await user.findOne({email}); //check if user already exist
         if(UserExist) return res.status(401).json({message: "Error",cause: "User already exist"}); //return error message in json format
